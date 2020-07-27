@@ -12,13 +12,11 @@ from utils.singleton import Singleton
 
 class MongoDB(object):
     def __init__(self):
-        _config = settings.load_config()
-        self.host = _config.MONGO_HOST
-        self.port = _config.MONGO_PORT
-        self.database = _config.MONGO_DATABASE
-        self.username = _config.MONGO_USERNAME
-        self.password = _config.MONGO_PASSWORD
-        self.connect_timeout = _config.MONGO_CONNECT_TIMEOUT
+        self.host = settings.MONGO_HOST
+        self.port = settings.MONGO_PORT
+        self.database = settings.MONGO_DATABASE
+        self.username = settings.MONGO_USER
+        self.password = settings.MONGO_PASSWORD
         self.conn = self.get_instance
 
     def __del__(self):
@@ -32,9 +30,7 @@ class MongoDB(object):
             password=self.password,
             port=self.port,
             authSource="admin",
-            authMechanism="SCRAM-SHA-1",
-            connectTimeoutMS=self.connect_timeout,
-            serverSelectionTimeoutMS=self.connect_timeout,
+            authMechanism="SCRAM-SHA-1"
         )
 
     @property

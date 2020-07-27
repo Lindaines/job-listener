@@ -19,8 +19,9 @@ MONGO_HOST = os.environ.get("MONGO_HOST", "localhost")
 MONGO_DATABASE = os.environ.get("MONGO_DATABASE", "scheduler")
 MONGO_COLLECTION = os.environ.get("MONGO_COLLECTION", "jobs")
 MONGO_PORT = os.environ.get("MONGO_PORT", 27017)
-MONGO_USER = os.environ.get("MONGO_USER", "mongo")
-MONGO_PASSWORD = os.environ.get("RABBITMQ_PASSWORD", "mongo")
+MONGO_USER = os.environ.get("MONGO_USER", "root")
+MONGO_PASSWORD = os.environ.get("RABBITMQ_PASSWORD", "KXZBE5PRfO")
+MONGO_COLLECTION_JOBS = os.environ.get("MONGO_COLLECTION_JOBS", "jobs")
 
 #Config Email Notifier
 EMAIL_USER = os.environ.get("EMAIL_USER", "lindainescostav@gmail.com")

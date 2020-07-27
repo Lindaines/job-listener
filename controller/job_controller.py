@@ -9,13 +9,12 @@ class JobController:
     def __init__(self):
         self.mongo = MongoDB()
         self.notificator = EmailSender()
-        self.configs = settings.load_config()
 
     def update_db(self, id_job: str, status_job: str):
         return self.mongo.update_one(
-            self.configs.MONGO_COLLECTION_JOBS,
+            settings.MONGO_COLLECTION_JOBS,
             {"_id": ObjectId(id_job)},
-            {"$set": {"status_job": status_job}}
+            {"$set": {"status_job": status_job}}, upsert=True
         )
 
     def notify(self, id_job, status_job):
