@@ -99,6 +99,7 @@ class MongoDB(object):
         try:
             db = self.conn[self.database]
             x = db[collection].update_one(filter=query, update=obj, upsert=upsert)
+            logger.info(f"Updated: {str(x)}")
             return x
         except Exception as ex:
             logger.error(f"Failed to update item in MongoDB. ERROR ---> {str(ex)}")

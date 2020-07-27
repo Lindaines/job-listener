@@ -14,8 +14,7 @@ class JobController:
         return self.mongo.update_one(
             settings.MONGO_COLLECTION_JOBS,
             {"_id": ObjectId(id_job)},
-            {"$set": {"status_job": status_job}}, upsert=True
-        )
+            {"$set": {"status_job": status_job}}, upsert=True)
 
     def notify(self, id_job, status_job):
         self.notificator.send(id_job, status_job)

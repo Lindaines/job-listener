@@ -16,7 +16,7 @@ CONSUME_ROUTING_KEY = os.environ.get("CONSUME_ROUTING_KEY", "")
 
 # Config MongoDB
 MONGO_HOST = os.environ.get("MONGO_HOST", "localhost")
-MONGO_DATABASE = os.environ.get("MONGO_DATABASE", "scheduler")
+MONGO_DATABASE = os.environ.get("MONGO_DATABASE", "scheduler-job-manager")
 MONGO_COLLECTION = os.environ.get("MONGO_COLLECTION", "jobs")
 MONGO_PORT = os.environ.get("MONGO_PORT", 27017)
 MONGO_USER = os.environ.get("MONGO_USER", "root")
@@ -24,6 +24,6 @@ MONGO_PASSWORD = os.environ.get("RABBITMQ_PASSWORD", "KXZBE5PRfO")
 MONGO_COLLECTION_JOBS = os.environ.get("MONGO_COLLECTION_JOBS", "jobs")
 
 #Config Email Notifier
-EMAIL_USER = os.environ.get("EMAIL_USER", "lindainescostav@gmail.com")
-EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD", "doiwannaknow1700")
+EMAIL_USER = os.environ.get("EMAIL_USER", "")
+EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD", "")
 SEND_TO_SPLITTED_BY_COMMA = os.environ.get("SEND_TO_SPLITTED_BY_COMMA", "lindainesv49@gmail.com,linda.vieira@cedrotech.com")
